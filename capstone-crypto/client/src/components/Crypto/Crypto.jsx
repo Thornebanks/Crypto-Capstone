@@ -8,6 +8,7 @@ const key = process.env.REACT_APP_API_KEY;
 function CryptoCurrency() {
   const [currency, setCurrency] = useState([]);
   const [currencySearch, setCurrencySearch] = useState("");
+//   const [name , setName] = useState("")
 
   useEffect(() => {
     axios
@@ -23,7 +24,7 @@ function CryptoCurrency() {
 
   const handleChange = (event) => {
     setCurrencySearch(event.target.value);
-    console.log(currencySearch);
+    // setName(event.target.value);
   };
 
   return (
@@ -43,15 +44,18 @@ function CryptoCurrency() {
         .filter((obj) =>
           currencySearch
             ? obj.currency.toLowerCase() === currencySearch.toLowerCase()
-            : obj
+            : obj //? obj.name.toLowerCase() === name.toLowerCase() : obj
         )
-        .slice(0, 5)
+        .slice(0, 7)
         .map((obj) => (
           <Currency
             key={obj.id}
             logo_url={obj.logo_url}
             name={obj.name}
             currency={obj.currency}
+            price={obj.price}
+            price_change={obj['1d'].price_change}
+            price_change_pct={obj['1d'].price_change_pct}
           />
         ))}
     </div>

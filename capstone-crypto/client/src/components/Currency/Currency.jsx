@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Currency.scss"
 
+
 const Currency = ({ logo_url, name, currency, price, price_change, price_change_pct}) => {
     return (
         <div className="currency">
@@ -10,8 +11,10 @@ const Currency = ({ logo_url, name, currency, price, price_change, price_change_
                     <h1>{name}</h1>
                     <p>{currency}</p>
                     <p>{price}</p>
-                    <p>{price_change}</p>
-                    <p>{price_change_pct}</p>
+                    <div>
+                        <p>{price_change}</p>
+                        <p>{price_change_pct}%</p>
+                    </div>
                 </div>
             </div>
         </div>
