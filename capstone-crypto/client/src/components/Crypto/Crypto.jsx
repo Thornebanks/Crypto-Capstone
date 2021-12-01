@@ -2,18 +2,19 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Crypto.scss";
 import Currency from "../Currency/Currency";
+import { Link } from "react-router-dom";
 
 const key = process.env.REACT_APP_API_KEY;
 
 function CryptoCurrency() {
   const [currency, setCurrency] = useState([]);
   const [currencySearch, setCurrencySearch] = useState("");
-//   const [name , setName] = useState("")
+    // const [name , setName] = useState("")
 
   useEffect(() => {
     axios
       .get(
-        `https://api.nomics.com/v1/currencies/ticker?key=${key}&interval=1d,30d&convert=EUR&per-page=100&page=1`
+        `https://api.nomics.com/v1/currencies/ticker?key=${key}&interval=1h,1d,7d,30d,365d,ytd&per-page=100&page=1`
       )
       .then((response) => {
         setCurrency(response.data);
@@ -41,22 +42,24 @@ function CryptoCurrency() {
         </form>
       </div>
       {currency
-        .filter((obj) =>
-          currencySearch
-            ? obj.currency.toLowerCase() === currencySearch.toLowerCase()
-            : obj //? obj.name.toLowerCase() === name.toLowerCase() : obj
+        .filter(
+          (obj) =>
+            currencySearch
+              ? obj.currency.toLowerCase() === currencySearch.toLowerCase()
+              : obj
         )
         .slice(0, 7)
         .map((obj) => (
-          <Currency
-            key={obj.id}
-            logo_url={obj.logo_url}
-            name={obj.name}
-            currency={obj.currency}
-            price={obj.price}
-            price_change={obj['1d'].price_change}
-            price_change_pct={obj['1d'].price_change_pct}
-          />
+          <Link key={obj.id} to={"/currency/" +obj.currency}>
+            <Currency
+              logo_url={obj.logo_url}
+              name={obj.name}
+              currency={obj.currency}
+              price={obj.price}
+              price_change={obj["1d"].price_change}
+              price_change_pct={obj["1d"].price_change_pct}
+            />
+          </Link>
         ))}
     </div>
   );

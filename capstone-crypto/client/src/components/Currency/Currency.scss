@@ -1,3 +1,12 @@
+@use '../../styles/styles.scss' as *;
+
 img{
     max-width: 100px;
+}
+
+.currency{
+    &__conatiner{
+        display: flex;
+    }
+
 }
