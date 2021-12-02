@@ -9,7 +9,6 @@ const key = process.env.REACT_APP_API_KEY;
 function List() {
   const [currency, setCurrency] = useState([]);
   const [currencySearch, setCurrencySearch] = useState("");
-  // const [name , setName] = useState("")
 
   useEffect(() => {
     axios
@@ -23,23 +22,10 @@ function List() {
       .catch((error) => console.log(error));
   }, []);
 
-  const handleChange = (event) => {
-    setCurrencySearch(event.target.value);
-    // setName(event.target.value);
-  };
-
   return (
     <div className="List">
       <div className="List__container">
         <h1 className="List__title">Top 100 Crypto</h1>
-        <form className="List__form">
-          <input
-            className="List__input"
-            type="text"
-            placeholder="Search"
-            onChange={handleChange}
-          />
-        </form>
       </div>
       {currency
         .filter((obj) =>

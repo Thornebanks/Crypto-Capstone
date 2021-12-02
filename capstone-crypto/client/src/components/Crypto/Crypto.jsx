@@ -36,7 +36,7 @@ function Crypto() {
           <input
             className="crypto__input"
             type="text"
-            placeholder="Search"
+            placeholder="Search Market"
             onChange={handleChange}
           />
         </form>
