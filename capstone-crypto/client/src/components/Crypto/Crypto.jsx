@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./Crypto.scss";
+// import "./Crypto.scss";
 import Currency from "../Currency/Currency";
 import { Link } from "react-router-dom";
 
 const key = process.env.REACT_APP_API_KEY;
 
-function CryptoCurrency() {
+function Crypto() {
   const [currency, setCurrency] = useState([]);
   const [currencySearch, setCurrencySearch] = useState("");
   // const [name , setName] = useState("")
@@ -64,4 +64,4 @@ function CryptoCurrency() {
   );
 }
 
-export default CryptoCurrency;
+export default Crypto;
