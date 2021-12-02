@@ -34,7 +34,7 @@ function List() {
             : obj
         )
         .map((obj) => (
-          <Link key={obj.id} to={"/List/" + obj.currency}>
+          <Link key={obj.id} to={"/coin/" + obj.id}>
             <Currency
               logo_url={obj.logo_url}
               name={obj.name}
