@@ -1,0 +1,19 @@
+@use "sass:math";
+
+$tablet: 768px;
+$desktop: 1280px;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
