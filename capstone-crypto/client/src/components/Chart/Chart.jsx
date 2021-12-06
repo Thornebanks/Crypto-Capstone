@@ -27,30 +27,67 @@ ChartJS.register(
 
 const key = process.env.REACT_APP_API_KEY;
 
-function Graph({ coin }) {
+function Graph(props) {
   const [historicalData, setHistoricalData] = useState();
 
-  useEffect(() => {
-    console.log();
-    axios
-      .get(
-        `https://api.nomics.com/v1/market-cap/history?key=${key}&start=2018-04-14T00%3A00%3A00Z&end=2018-05-14T00%3A00%3A00Z`
-      )
-      .then((response) => {
-        const marketCap = []
-        const timeStamp = []
-        for (let i=0; i < response.data.length; i++) {
-          marketCap.push(response.data[i].market_cap)
-          timeStamp.push(response.data[i].timestamp)
-        }
-        console.log(response.data);
-        console.log(marketCap);
-        console.log(timeStamp);
+  // useEffect(() => {
+  //   console.log();
+  //   axios
+  //     .get(
+  //       `https://api.nomics.com/v1/currencies/ticker?key=${key}&interval=1h,1d,7d,30d,365d&per-page=100&page=1`
+  //     )
+  //     .then((response) => {
+  //       const price = []
+  //       const priceDate = []
+  //       for (let i=0; i < response.data.length; i++) {
+  //         price.push(response.data[i].price)
+  //         priceDate.push(response.data[i].price_date)
+  //       }
+  //       console.log("testing",response.data);
+  //       // console.log(price);
+  //       // console.log(priceDate);
 
-        setHistoricalData({labels: timeStamp,
+  //       setHistoricalData({labels: priceDate,
+  //       datasets: [
+  //         {
+  //           label: "My First dataset",
+  //           fill: false,
+  //           lineTension: 0.1,
+  //           backgroundColor: "rgba(75,192,192,0.4)",
+  //           borderColor: "rgba(75,192,192,1)",
+  //           borderCapStyle: "butt",
+  //           borderDash: [],
+  //           borderDashOffset: 0.0,
+  //           borderJoinStyle: "miter",
+  //           pointBorderColor: "rgba(75,192,192,1)",
+  //           pointBackgroundColor: "#fff",
+  //           pointBorderWidth: 1,
+  //           pointHoverRadius: 5,
+  //           pointHoverBackgroundColor: "rgba(75,192,192,1)",
+  //           pointHoverBorderColor: "rgba(220,220,220,1)",
+  //           pointHoverBorderWidth: 2,
+  //           pointRadius: 1,
+  //           pointHitRadius: 10,
+  //           data: price
+  //         }
+  //       ]
+  //     });
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+
+    useEffect(() => {
+      console.log("test", props.coin);
+      // const price = []
+      // const priceDate = []
+      // for (let i=0; i < response.data.length; i++) {
+      //   price.push(response.data[i].price)
+      //   priceDate.push(response.data[i].price_date)
+      // }
+      setHistoricalData({labels: props.coin.price_date,
         datasets: [
           {
-            label: "My First dataset",
+            label: "Price",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
@@ -68,13 +105,11 @@ function Graph({ coin }) {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: marketCap
+            data: props.coin.price
           }
         ]
       });
-      })
-      .catch((error) => console.log(error));
-  }, []);
+    }, [])
 
   if (!historicalData) {
     return <h2>Loading</h2>;

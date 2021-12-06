@@ -8,24 +8,20 @@ const key = process.env.REACT_APP_API_KEY;
 
 function SingleCrypto(props) {
    const [coin , setCoin] = useState();
-//    const [con , setCon] = useState(false);
 
    useEffect(() => {
-       console.log(props)
+       console.log("props", props)
     axios
       .get(
-        `https://api.nomics.com/v1/currencies/ticker?key=${key}&ids=${props.match.params.id}`
+        `https://api.nomics.com/v1/currencies/ticker?key=${key}&ids=${props.match.params.id}&interval=1d,7d,30d,365d&per-page=100&page=1`
       )
       .then((response) => {
-        console.log(response.data);
+        console.log("testing",response.data);
         setCoin(response.data[0])
       })
       .catch((error) => console.log(error));
   }, []);
 
-    // function changeCon(){
-    //     setCon(!con)
-    // }
 
     if (!coin){
         return <h2>
@@ -42,7 +38,8 @@ function SingleCrypto(props) {
                 <h6>$ {coin["1d"].price_change}</h6>
                 <h6>{coin["1d"].price_change_pct}%</h6>
 
-                <Chart />
+                <Chart coin={coin}/>
+                
                 
                 
 
@@ -63,6 +60,3 @@ function SingleCrypto(props) {
 }
 
 export default SingleCrypto;
-
-{/* <button onClick={() => changeCon()}>Change con</button>
-{con && <h1>true</h1>} */}

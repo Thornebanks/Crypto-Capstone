@@ -18,7 +18,7 @@ function List() {
       )
       .then((response) => {
         setCurrency(response.data);
-        console.log(response.data);
+        console.log("testing",response.data);
       })
       .catch((error) => console.log(error));
   }, []);
