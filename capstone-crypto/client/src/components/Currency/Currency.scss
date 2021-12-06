@@ -1,37 +1,54 @@
-@use '../../styles/styles.scss' as *;
-@use '../../styles/partials/mixins' as*;
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/mixins" as *;
 
+.currency {
+  &__title,
+  &__ticker,
+  &__price,
+  &__priceChange,
+  &__percentage {
+    color: $coin;
+  }
+  &__container {
+    padding: 25px;
+    border-bottom: 1px solid $border;
+  }
+  &__card {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
 
-
-
-.currency{
-    &__container{
-        display: flex;
-        border-bottom: 1px solid $border;
-        padding: 25px;
+    &:hover {
+      filter: drop-shadow(2px 4px 6px black);
+      background-color: $grey;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: ease-out 0.3s;
     }
-     &__container1{
-         display: flex;
-         box-sizing: border-box;
-         align-items: center;
-         padding-right: 8px;
-     }
+  }
+  &__container1 {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    padding-right: 8px;
+  }
 
-     &__img{
-         height: 60px;
-         width: 60px;
-         margin-right: 20px;
-     }
-     &__title{
-        font-size: rem(16px);
-        width: 150px;
-     }
-    &__container2{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    &__name{
-        line-height: 1.5;
-    }
+  &__img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+  }
+  &__title {
+    font-size: rem(16px);
+    width: 150px;
+  }
+  &__container2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+  }
+  &__name {
+    line-height: 1.5;
+  }
 }

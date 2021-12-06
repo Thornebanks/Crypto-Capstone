@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import "./Crypto.scss";
+import "./Crypto.scss";
 import Currency from "../Currency/Currency";
 import { Link } from "react-router-dom";
 
@@ -31,7 +31,7 @@ function Crypto() {
   return (
     <div className="crypto">
       <div className="crypto__container">
-        <h1 className="crypto__title">Crypto Tracker</h1>
+        <h1 className="crypto__title">Gemennie</h1>
         <form className="crypto__form">
           <input
             className="crypto__input"
@@ -49,7 +49,7 @@ function Crypto() {
         )
         .slice(0, 7)
         .map((obj) => (
-          <Link key={obj.id} to={"/coin/" + obj.id}>
+          <Link className="crypto__link" key={obj.id} to={"/coin/" + obj.id}>
             <Currency
               logo_url={obj.logo_url}
               name={obj.name}
