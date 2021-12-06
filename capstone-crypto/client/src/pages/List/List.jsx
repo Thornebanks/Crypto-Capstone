@@ -5,6 +5,7 @@ import Currency from "../../components/Currency/Currency";
 import { Link } from "react-router-dom";
 
 const key = process.env.REACT_APP_API_KEY;
+const url = `https://api.nomics.com/v1/currencies/ticker`
 
 function List() {
   const [currency, setCurrency] = useState([]);
@@ -13,7 +14,7 @@ function List() {
   useEffect(() => {
     axios
       .get(
-        `https://api.nomics.com/v1/currencies/ticker?key=${key}&interval=1h,1d,7d,30d,365d,ytd&per-page=100&page=1`
+        `${url}?key=${key}&interval=1h,1d,7d,30d,365d,ytd&per-page=100&page=1`
       )
       .then((response) => {
         setCurrency(response.data);

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './SingleCrypto';
-const key = process.env.REACT_APP_API_KEY;
+import Chart from '../../components/Chart/Chart';
 
+
+const key = process.env.REACT_APP_API_KEY;
 
 function SingleCrypto(props) {
    const [coin , setCoin] = useState();
@@ -27,7 +29,7 @@ function SingleCrypto(props) {
 
     if (!coin){
         return <h2>
-            loading
+            Loading
         </h2>
     }
     return (
@@ -36,9 +38,13 @@ function SingleCrypto(props) {
                 <img src={coin.logo_url} alt="coin logo" width="50px" />
                 <h2>{coin.name}</h2>
                 <h6>{coin.currency}</h6>
+                <h6>{coin.price}</h6>
                 <h6>$ {coin["1d"].price_change}</h6>
                 <h6>{coin["1d"].price_change_pct}%</h6>
 
+                <Chart />
+                
+                
 
                 <h2>About {coin.name}</h2>
                 <h6>Market cap</h6>
