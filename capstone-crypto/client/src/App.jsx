@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import Home from '../src/pages/Home/Home';
-// import List from './pages/List/List';
+import About from './pages/About/About';
 import Footer from "../src/components/Footer/Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SingleCrypto from './pages/SingleCrypto/SingleCrypto';
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
      <Switch>
        <Route  exact path="/" component={Home} />
-       {/* <Route  path="/List" component={List} /> */}
+       <Route  path="/About" component={About} />
        <Route path="/coin/:id" component={SingleCrypto} />
      </Switch>
      <Footer />

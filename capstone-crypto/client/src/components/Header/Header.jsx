@@ -14,9 +14,9 @@ function Header() {
           </Link>
         </div>
         <div className="header__links">
-          {/* <NavLink className="header__links-anchor" to="/List">
-            <p className="header__links header__links--p">Top Traded</p>
-          </NavLink> */}
+          <NavLink className="header__links-anchor" to="/About">
+            <p className="header__links header__links--p">About Us</p>
+          </NavLink>
           {/* <NavLink className="header__links-anchor" to="/inventories">
             <p className="header__links header__links--p">Inventory</p>
           </NavLink> */}
