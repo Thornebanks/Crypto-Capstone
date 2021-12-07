@@ -1,0 +1,60 @@
+@use '../../styles/styles.scss' as*;
+@use '../../styles/partials/mixins' as *;
+
+
+.crypto{
+    padding: 30px;
+    &__card{
+        display: flex;
+        align-items: center;
+        padding-bottom: 15px;
+    }
+    &__logo{
+        width: 100px;
+    }
+    &__btc{
+        padding-left: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__name{
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: rem(20px);
+    }
+    &__container2{
+        padding-left: 80px;
+    }
+    &__price{
+        font-size: rem(24px);
+        padding-bottom: 8px;
+        color: $coin;
+    }
+    &__changeCard{
+        display: flex;
+        gap: 15px;
+        padding-bottom: 30px;
+    }
+    &__des{
+        padding: 20px 40px;
+    }
+   &__about{
+       padding-top: 15px;
+       display: flex;
+       justify-content: space-evenly;
+       line-height: 1.4;
+       color: $coin;
+   }
+   &__p{
+       font-size: rem(12px);
+       padding-top: 5px;
+       padding-left: 5px;
+   }
+   &__h6{
+       font-size: rem(20px);
+   }
+   &__value{
+       display: flex;
+   }
+}

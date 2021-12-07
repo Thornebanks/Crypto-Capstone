@@ -9,7 +9,6 @@ const key = process.env.REACT_APP_API_KEY;
 function Crypto() {
   const [currency, setCurrency] = useState([]);
   const [currencySearch, setCurrencySearch] = useState("");
-  // const [name , setName] = useState("")
 
   useEffect(() => {
     axios
@@ -18,20 +17,18 @@ function Crypto() {
       )
       .then((response) => {
         setCurrency(response.data);
-        console.log("testing", response.data);
+        console.log(response.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
   const handleChange = (event) => {
     setCurrencySearch(event.target.value);
-    // setName(event.target.value);
   };
 
   return (
     <div className="crypto">
       <div className="crypto__container">
-        <h1 className="crypto__title">Gemennie</h1>
         <form className="crypto__form">
           <input
             className="crypto__input"
@@ -40,6 +37,16 @@ function Crypto() {
             onChange={handleChange}
           />
         </form>
+        <div className="crypto__tag">
+          <h3 className="crypto__crypto">Cryptos</h3>
+          <div className="crypto__tabel">
+            <h3 className="crypto__price">Price</h3>
+            <div className="crypto__style">
+              <h3 className="crypto__change">24hr Change</h3>
+              <h3 className="crypto__pct">% Change</h3>
+            </div>
+          </div>
+        </div>
       </div>
       {currency
         .filter((obj) =>
@@ -47,7 +54,7 @@ function Crypto() {
             ? obj.currency.toLowerCase() === currencySearch.toLowerCase()
             : obj
         )
-        .slice(0, 7)
+        .slice(0, 10)
         .map((obj) => (
           <Link className="crypto__link" key={obj.id} to={"/coin/" + obj.id}>
             <Currency

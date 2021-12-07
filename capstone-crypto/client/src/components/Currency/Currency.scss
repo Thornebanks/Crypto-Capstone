@@ -17,6 +17,7 @@
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+    background-color: $border;
 
     &:hover {
       filter: drop-shadow(2px 4px 6px black);
@@ -50,5 +51,11 @@
   }
   &__name {
     line-height: 1.5;
+  }
+  &__red{
+    color: $red;
+  }
+  &__green{
+    color: $green;
   }
 }

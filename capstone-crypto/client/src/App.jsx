@@ -10,10 +10,8 @@ function App() {
   return (
     <BrowserRouter>
      <Switch>
-       {/* <Route exact path="/" render={(routerProps) => <Home {...routerProps} />}/> */}
        <Route  exact path="/" component={Home} />
        {/* <Route  path="/List" component={List} /> */}
-       {/* <Route path="/List" render={(routerProps) => <List {...routerProps} />}/> */}
        <Route path="/coin/:id" component={SingleCrypto} />
      </Switch>
      <Footer />

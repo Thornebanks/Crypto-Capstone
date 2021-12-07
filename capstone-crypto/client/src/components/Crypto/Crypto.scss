@@ -1,7 +1,50 @@
+@use '../../styles/styles.scss' as*;
+@use '../../styles/partials/mixins' as *;
 
 
 .crypto{
     &__link{
         text-decoration: none;
     }
+
+&__form{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+&__input{
+    padding: 20px 35px;
+    width: 22%;
+    background-color: $grey;
+    border: none;
+    font-size: rem(14px);
+    border-radius: 5px;
+}
+&__tag{
+    display: flex;
+    padding-top: 25px;
+    justify-content: space-around;
+}
+&__crypto{
+    font-size: rem(20px);
+}
+&__tabel{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    align-items: center;
+}
+&__style{
+    display: flex;
+    justify-content: space-evenly;
+    // width: 40%;
+    gap: 80px;
+    padding-left: 170px;
+}
+&__change{
+    font-size: rem(20px);
+}
+&__pct{
+    font-size: rem(20px);
+}
 }

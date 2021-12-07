@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-// const key = process.env.REACT_APP_API_KEY2;
+const key = process.env.REACT_APP_API_KEY2;
 
 function NewsFeed(){
 

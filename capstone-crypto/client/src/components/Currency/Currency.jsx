@@ -1,14 +1,14 @@
 import React from "react";
 import "./Currency.scss";
 
-const Currency = ({
-  logo_url,
+function Currency({logo_url,
   name,
   currency,
   price,
   price_change,
-  price_change_pct,
-}) => {
+  price_change_pct}) 
+  {
+    console.log(price_change.includes("-"))
   return (
     <div className="currency">
       <div className="currency__container">
@@ -25,9 +25,15 @@ const Currency = ({
             </div>
           </div>
           <div className="currency__container2">
-            <p className="currency__price">{price}</p>
-            <p className="currency__priceChange">{price_change}</p>
-            <p className="currency__percentage">{price_change_pct}%</p>
+            <p className="currency__price">{price} USD</p>
+            {price_change.includes("-") ? (
+              <p className="currency__red">{price_change}</p>
+            ) : (<p className="currency__green">{price_change}</p>) 
+            }
+            {price_change_pct.includes("-") ? (
+              <p className="currency__red">{price_change_pct}%</p>
+            ) : (<p className="currency__green">{price_change_pct}%</p>) 
+            }
           </div>
         </div>
       </div>
