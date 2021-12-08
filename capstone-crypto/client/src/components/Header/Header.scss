@@ -1,61 +1,70 @@
-@use '../../styles/styles.scss' as*;
-@use '../../styles/partials/mixins' as *;
-  
-  .header {
-    background-color: $grey;
-    &__logo {
-      display: flex;
-      margin: 0 auto;
-      width: 50px;
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  background-color: $grey;
+  &__container {
+    padding: 30px;
+  }
+  &__logo {
+    display: flex;
+    margin: 0 auto;
+    width: 50px;
+  }
+  &__title {
+    font-size: rem(32px);
+    color: teal;
+    padding: 5px 0;
+  }
+  &__links {
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 12px;
+    font-size: rem(16px);
+
+    @include tablet {
+      width: auto;
     }
-    &__title{
-      font-size: rem(32px);
-      color: teal;
-    }
-    &__links {
-      width: 100%;
+
+    &-anchor {
+      color: $coin;
       text-decoration: none;
-  
-      @include tablet {
-        width: auto;
-      }
-  
-      &-anchor {
-        color: $coin;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 600;
-        padding: 15px 40px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 15px 40px;
+      width: 50%;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
         border-radius: 25px;
-        width: 50%;
-  
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
-        }
-        @include tablet {
-          font-size: 14px;
-          padding: 15px 20px;
-        }
+        background-color: beige;
       }
-    }
-    &__wrapper {
-      width: 100%;
-      padding: 16px;
-      gap: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  
       @include tablet {
-        padding: 32px;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      @include desktop {
-        padding: 32px 0;
-        width: 1000px;
-        margin: 0 auto;
+        font-size: 14px;
+        padding: 15px 20px;
       }
     }
   }
+  &__wrapper {
+    width: 100%;
+    padding: 16px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      padding: 32px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include desktop {
+      padding: 32px 0;
+      width: 1000px;
+      margin: 0 auto;
+    }
+  }
+}

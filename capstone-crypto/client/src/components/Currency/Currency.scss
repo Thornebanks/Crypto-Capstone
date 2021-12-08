@@ -10,7 +10,7 @@
     color: $coin;
   }
   &__container {
-    padding: 25px;
+    padding-top: 25px;
     border-bottom: 1px solid $border;
   }
   &__card {
@@ -19,8 +19,10 @@
     padding: 10px;
     background-color: $border;
     flex-direction: column;
-    @include tablet { 
-        flex-direction: row;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: stretch;
     }
 
     &:hover {
@@ -48,18 +50,44 @@
     width: 150px;
   }
   &__container2 {
+    align-items: flex-start;
+    padding-top: 8px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    line-height: 1.5;
     width: 70%;
+    @include desktop {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+  &__mobile {
+    display: flex;
+    line-height: 1.5;
+    @include tablet {
+      justify-content: space-between;
+      width: 50%;
+    }
+    @include desktop {
+      width: 100%;
+    }
+  }
+  &__mobileOnly {
+    padding-top: 8px;
+    color: $coin;
+    @include desktop {
+      display: none;
+    }
   }
   &__name {
     line-height: 1.5;
   }
-  &__red{
+  &__red {
     color: $red;
   }
-  &__green{
+  &__green {
     color: $green;
   }
 }

@@ -40,11 +40,9 @@ function Crypto() {
         <div className="crypto__tag">
           <h3 className="crypto__crypto">Cryptos</h3>
           <div className="crypto__tabel">
-            <h3 className="crypto__price">Price</h3>
-            <div className="crypto__style">
-              <h3 className="crypto__change">24hr Change</h3>
-              <h3 className="crypto__pct">% Change</h3>
-            </div>
+            <h3 className="crypto__prices">Price</h3>
+            <h3 className="crypto__change">24hr Change</h3>
+            <h3 className="crypto__pct">% Change</h3>
           </div>
         </div>
       </div>
@@ -54,7 +52,6 @@ function Crypto() {
             ? obj.currency.toLowerCase() === currencySearch.toLowerCase()
             : obj
         )
-        .slice(0, 10)
         .map((obj) => (
           <Link className="crypto__link" key={obj.id} to={"/coin/" + obj.id}>
             <Currency

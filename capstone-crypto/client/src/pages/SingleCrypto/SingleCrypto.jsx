@@ -24,86 +24,87 @@ function SingleCrypto(props) {
   if (!coin) {
     return <h2>Loading</h2>;
   }
-  console.log(coin["id"].price_change)
+  console.log(coin["id"].price_change);
   return (
     <div>
-        <Header />
+      <Header />
       <div className="crypto">
-          <div className="crypto__container1">
-            <div className="crypto__card">
-              <img
-                className="crypto_logo"
-                src={coin.logo_url}
-                alt="coin logo"
-                width="50px"
-              />
-              <div className="crypto__btc">
-                <h2 className="crypto__name">{coin.name}</h2>
-                <h6 className="crypto__currency">{coin.currency}</h6>
-              </div>
-            </div>
-            <div className="crypto__container2">
-              <h6 className="crypto__price">$ {coin.price} USD</h6>
-              <div className="crypto__changeCard">
-                {/* <h6 className="crypto__change">$ {coin["1d"].price_change}</h6>
-                <h6 className="crypto__pct">{coin["1d"].price_change_pct}%</h6> */}
-                {coin && coin["1d"].price_change.includes("-") ? (
-                  <p className="currency__red">$ {coin["1d"].price_change}</p>
-                ) : (
-                  <p className="currency__green">{coin["1d"].price_change}</p>
-                )}
-                {coin && coin["1d"].price_change_pct.includes("-") ? (
-                  <p className="currency__red">{coin["1d"].price_change_pct}%</p>
-                ) : (
-                  <p className="currency__green">{coin["1d"].price_change_pct}%</p>
-                )}
-              </div>
+        <div className="crypto__container1">
+          <div className="crypto__card">
+            <img
+              className="crypto_logo"
+              src={coin.logo_url}
+              alt="coin logo"
+              width="50px"
+            />
+            <div className="crypto__btc">
+              <h2 className="crypto__name">{coin.name}</h2>
+              <h6 className="crypto__currency">{coin.currency}</h6>
             </div>
           </div>
-          <Chart coin={coin} />
-          <div className="crypto__des">
-              <h2>About {coin.name}</h2>
+          <div className="crypto__container2">
+            <h6 className="crypto__price">$ {coin.price} USD</h6>
+            <div className="crypto__changeCard">
+              {coin && coin["1d"].price_change.includes("-") ? (
+                <p className="crypto__red">$ {coin["1d"].price_change}</p>
+              ) : (
+                <p className="crypto__green">{coin["1d"].price_change}</p>
+              )}
+              {coin && coin["1d"].price_change_pct.includes("-") ? (
+                <p className="crypto__red">{coin["1d"].price_change_pct}%</p>
+              ) : (
+                <p className="crypto__green">{coin["1d"].price_change_pct}%</p>
+              )}
+            </div>
           </div>
-          <div className="crypto__about">
-              <div>
-                  <div className="crypto__h6">
-                      <h6>Market cap</h6>
-                  </div>
-                  <div className="crypto__value">
-                      <h6>$ {coin.market_cap}</h6>
-                      <p className="crypto__p">USD</p>
-                  </div>
+        </div>
+        <Chart coin={coin} />
+
+        <div className="crypto__des">
+          <h2>About {coin.name}</h2>
+        </div>
+        <div className="crypto__about">
+          <div className="crypto__tablet">
+            <div className="crypto__table">
+              <div className="crypto__h6">
+                <h6>Market Cap</h6>
               </div>
-              <div>
-                  <div className="crypto__h6">
-                      <h6>Volume (24 hrs)</h6>
-                  </div>
-                  <div className="crypto__value">
-                      <h6>$ {coin["1d"].volume}</h6>
-                      <p className="crypto__p">USD</p>
-                  </div>
+              <div className="crypto__value">
+                <h6>$ {coin.market_cap}</h6>
+                <p className="crypto__p">USD</p>
               </div>
-              <div>
-                  <div className="crypto__h6">
-                      <h6>Circulation supply</h6>
-                  </div>
-                  <div className="crypto__value">
-                      <h6>
-                        {coin.circulating_supply}
-                      </h6>
-                      <p className="crypto__p">{coin.currency}</p>
-                  </div>
+            </div>
+            <div className="crypto__table">
+              <div className="crypto__h6">
+                <h6>Volume (24 hrs)</h6>
               </div>
-              <div>
-                  <div className="crypto__h6">
-                      <h6>All-time high</h6>
-                  </div>
-                  <div className="crypto__value">
-                      <h6>$ {coin.high}</h6>
-                      <p className="crypto__p">USD</p>
-                  </div>
+              <div className="crypto__value">
+                <h6>$ {coin["1d"].volume}</h6>
+                <p className="crypto__p">USD</p>
               </div>
+            </div>
           </div>
+          <div className="crypto__tablet">
+            <div className="crypto__table">
+              <div className="crypto__h6">
+                <h6>Circulation Supply</h6>
+              </div>
+              <div className="crypto__value">
+                <h6>{coin.circulating_supply}</h6>
+                <p className="crypto__p">{coin.currency}</p>
+              </div>
+            </div>
+            <div className="crypto__table">
+              <div className="crypto__h6">
+                <h6>All-time High</h6>
+              </div>
+              <div className="crypto__value">
+                <h6>$ {coin.high}</h6>
+                <p className="crypto__p">USD</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -9,14 +9,25 @@
   height: 70vh;
 
   &__title {
-    display: flex;
-    padding: 30px;
+    text-align: center;
+    padding-top: 45px;
+    font-size: rem(24px);
+    @include tablet {
+      font-size: rem(30px);
+      padding-top: 50px;
+    }
   }
 
   &__form {
-    margin: 25px 85px 75px 100px;
+    margin: 25px;
     display: flex;
     flex-direction: column;
+    @include tablet {
+      margin: 25px 100px;
+    }
+    @include desktop {
+      margin: 25px 85px 75px 100px;
+    }
   }
   &__input {
     display: block;
@@ -28,7 +39,6 @@
   &__btn {
     margin-top: 30px;
     height: 50px;
-    
   }
   &__label {
     padding: 10px;

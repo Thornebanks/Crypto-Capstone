@@ -1,18 +1,18 @@
-@use '../../styles/styles.scss' as*;
-@use '../../styles/partials/mixins' as*;
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/mixins" as *;
 
 .footer {
-    text-align: center;
-    width: 100%;
-    padding: 40px 0;
-    margin-top: auto;
+  text-align: center;
+  width: 100%;
+  padding: 40px 0;
+  margin-top: auto;
 
-    &__text {
+  &__text {
     color: $ticker;
-    font-size: .65rem;
-    
+    font-size: 0.65rem;
+
     @include tablet {
-        font-size: .75rem;
+      font-size: 0.75rem;
     }
-    }
+  }
 }

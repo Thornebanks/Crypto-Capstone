@@ -3,7 +3,10 @@
 
 
 .crypto{
-    padding: 30px;
+    padding:30px 10px;
+    @include tablet{
+        padding: 40px;
+    }
     &__card{
         display: flex;
         align-items: center;
@@ -16,20 +19,31 @@
         padding-left: 12px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
     &__name{
         font-weight: bold;
         padding-bottom: 5px;
         font-size: rem(20px);
+        @include tablet{
+            font-size: rem(24px);
+        }
     }
     &__container2{
-        padding-left: 80px;
+        padding-left: 40px;
+        @include tablet{
+            padding: 20px 50px;
+        }
     }
     &__price{
-        font-size: rem(24px);
+        font-size: rem(20px);
         padding-bottom: 8px;
         color: $coin;
+        @include tablet{
+            font-size: rem(24px);
+        }
+        @include desktop{
+            padding-bottom: 20px;
+        }
     }
     &__changeCard{
         display: flex;
@@ -37,24 +51,80 @@
         padding-bottom: 30px;
     }
     &__des{
-        padding: 20px 40px;
+        padding: 20px;
+        font-size: rem(20px);
+        @include tablet{
+            padding-top: 30px;
+            font-size: rem(24px);
+        }
+        @include desktop{
+            padding-top: 50px;
+            padding-left: 40px;
+        }
     }
    &__about{
        padding-top: 15px;
        display: flex;
+       flex-direction: column;
        justify-content: space-evenly;
-       line-height: 1.4;
+       line-height: 1.5;
        color: $coin;
+       @include desktop{
+           flex-direction: row;
+           margin-left: 100px;
+           
+       }
+      
    }
    &__p{
        font-size: rem(12px);
        padding-top: 5px;
        padding-left: 5px;
+       @include tablet{
+           font-size: rem(16px);
+           padding-top: 0;
+       }
    }
    &__h6{
-       font-size: rem(20px);
+       font-size: rem(18px);
+       @include tablet{
+           font-size: rem(24px);
+       }
    }
    &__value{
        display: flex;
+   }
+   &__table{
+       border-bottom: 1px solid $coin;
+       padding: 12px 0;
+       @include tablet{
+           border-bottom: none;
+           padding-right: 100px;
+       }
+   }
+   &__tablet{
+       @include tablet{
+           display: flex;
+           justify-content: space-evenly;
+           border-bottom: 1px solid $coin;
+       }
+       @include desktop{
+           border: none;
+       }
+       
+   }
+   &__red{
+       color: $red;
+       font-size: rem(14px);
+       @include tablet{
+           font-size: rem(18px);
+       }
+   }
+   &__green{
+       color: $green;
+       font-size: rem(14px);
+       @include tablet{
+        font-size: rem(18px);
+    }
    }
 }
