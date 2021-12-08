@@ -18,6 +18,10 @@
     justify-content: space-evenly;
     padding: 10px;
     background-color: $border;
+    flex-direction: column;
+    @include tablet { 
+        flex-direction: row;
+    }
 
     &:hover {
       filter: drop-shadow(2px 4px 6px black);

@@ -15,11 +15,11 @@ function Header() {
         </div>
         <div className="header__links">
           <NavLink className="header__links-anchor" to="/About">
-            <p className="header__links header__links--p">About Us</p>
+            <p className="header__links header__links--p">About</p>
           </NavLink>
-          {/* <NavLink className="header__links-anchor" to="/inventories">
-            <p className="header__links header__links--p">Inventory</p>
-          </NavLink> */}
+          <NavLink className="header__links-anchor" to="/Contact">
+            <p className="header__links header__links--p">Contact</p>
+          </NavLink>
         </div>
       </div>
     </header>

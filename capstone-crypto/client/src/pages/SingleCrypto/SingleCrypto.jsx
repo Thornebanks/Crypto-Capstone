@@ -24,6 +24,7 @@ function SingleCrypto(props) {
   if (!coin) {
     return <h2>Loading</h2>;
   }
+  console.log(coin["id"].price_change)
   return (
     <div>
         <Header />
@@ -44,18 +45,18 @@ function SingleCrypto(props) {
             <div className="crypto__container2">
               <h6 className="crypto__price">$ {coin.price} USD</h6>
               <div className="crypto__changeCard">
-                <h6 className="crypto__change">$ {coin["1d"].price_change}</h6>
-                <h6 className="crypto__pct">{coin["1d"].price_change_pct}%</h6>
-                {/* {coin["id"].price_change.includes("-") ? (
-                  <p className="currency__red">$ {coin["id"].price_change}</p>
+                {/* <h6 className="crypto__change">$ {coin["1d"].price_change}</h6>
+                <h6 className="crypto__pct">{coin["1d"].price_change_pct}%</h6> */}
+                {coin && coin["1d"].price_change.includes("-") ? (
+                  <p className="currency__red">$ {coin["1d"].price_change}</p>
                 ) : (
-                  <p className="currency__green">{coin["id"].price_change}</p>
+                  <p className="currency__green">{coin["1d"].price_change}</p>
                 )}
-                {coin["id"].price_change_pct.includes("-") ? (
-                  <p className="currency__red">{coin["id"].price_change_pct}%</p>
+                {coin && coin["1d"].price_change_pct.includes("-") ? (
+                  <p className="currency__red">{coin["1d"].price_change_pct}%</p>
                 ) : (
-                  <p className="currency__green">{coin["id"].price_change_pct}%</p>
-                )} */}
+                  <p className="currency__green">{coin["1d"].price_change_pct}%</p>
+                )}
               </div>
             </div>
           </div>
