@@ -2,14 +2,15 @@
 @use "../../styles/partials/mixins" as *;
 
 .NewsFeed{
-    padding: 30px 10px;
+    padding: rem(30px) rem(10px);
     line-height: 1.5;
+    background-color: $grey;
     @include tablet{
-        padding: 40px;
+        padding: rem(40px);
         line-height: 2;
     }
     @include desktop{
-        padding-left: 70px;
+        padding-left: rem(70px);
     }
 
     &__title{
@@ -22,14 +23,18 @@
     }
     &__article{
         color: $coin;
-        // text-decoration: none;
+        text-decoration: none;
         :hover{
             cursor: pointer;
+            text-decoration: underline;
         }
     }
     &__para{
         color: $coin;
         font-size: rem(18px);
+        :hover{
+            color: $coin;
+        }
         @include tablet{
             font-size: rem(20px);
         }

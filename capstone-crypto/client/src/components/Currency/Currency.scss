@@ -10,13 +10,13 @@
     color: $coin;
   }
   &__container {
-    padding-top: 25px;
+    padding-top: rem(25px);
     border-bottom: 1px solid $border;
   }
   &__card {
     display: flex;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: rem(10px);
     background-color: $border;
     flex-direction: column;
 
@@ -28,7 +28,7 @@
     &:hover {
       filter: drop-shadow(2px 4px 6px black);
       background-color: $grey;
-      border-radius: 40px;
+      border-radius: rem(40px);
       cursor: pointer;
       transition: ease-out 0.3s;
     }
@@ -37,21 +37,21 @@
     display: flex;
     box-sizing: border-box;
     align-items: center;
-    padding-right: 8px;
+    padding-right: rem(8px);
   }
 
   &__img {
-    height: 50px;
-    width: 50px;
-    margin-right: 20px;
+    height: rem(50px);
+    width: rem(50px);
+    margin-right: rem(20px);
   }
   &__title {
     font-size: rem(16px);
-    width: 150px;
+    width: ren(150px);
   }
   &__container2 {
     align-items: flex-start;
-    padding-top: 8px;
+    padding-top: rem(8px);
     display: flex;
     flex-direction: column;
     line-height: 1.5;
@@ -75,7 +75,7 @@
     }
   }
   &__mobileOnly {
-    padding-top: 8px;
+    padding-top: rem(8px);
     color: $coin;
     @include desktop {
       display: none;

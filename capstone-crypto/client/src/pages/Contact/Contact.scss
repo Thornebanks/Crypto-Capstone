@@ -10,38 +10,38 @@
 
   &__title {
     text-align: center;
-    padding-top: 45px;
+    padding-top: rem(45px);
     font-size: rem(24px);
     @include tablet {
       font-size: rem(30px);
-      padding-top: 50px;
+      padding-top: rem(50px);
     }
   }
 
   &__form {
-    margin: 25px;
+    margin: rem(25px);
     display: flex;
     flex-direction: column;
     @include tablet {
-      margin: 25px 100px;
+      margin: rem(25px) rem(100px);
     }
     @include desktop {
-      margin: 25px 85px 75px 100px;
+      margin: rem(25px) rem(85px) rem(75px) rem(100px);
     }
   }
   &__input {
     display: block;
-    padding: 20px;
-    border: 10px;
+    padding: rem(20px);
+    border: rem(10px);
     resize: none;
     background: $grey;
   }
   &__btn {
-    margin-top: 30px;
-    height: 50px;
+    margin-top: rem(30px);
+    height: rem(50px);
   }
   &__label {
-    padding: 10px;
+    padding: rem(10px);
     font-size: rem(18px);
   }
 }

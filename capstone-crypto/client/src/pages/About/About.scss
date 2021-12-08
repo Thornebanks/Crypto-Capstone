@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .about {
-  padding: 30px;
+  padding: rem(30px);
   color: $coin;
 
   --stripe: #cfd8dc;
@@ -17,27 +17,27 @@
 
   &__title {
     font-size: rem(20px);
-    padding-left: 40px;
-    padding-bottom: 30px;
+    padding-left: rem(40px);
+    padding-bottom: rem(30px);
   }
   &__header {
-    padding: 40px;
+    padding: rem(40px);
   }
   &__des {
-    padding-left: 60px;
+    padding-left: rem(60px);
     font-size: rem(16px);
-    padding-bottom: 30px;
+    padding-bottom: rem(30px);
     width: 90%;
     line-height: 1.3;
   }
   &__function {
-    padding-left: 40px;
+    padding-left: rem(40px);
     font-size: rem(18px);
     font-weight: 500;
-    padding-bottom: 30px;
+    padding-bottom: rem(30px);
   }
   &__functionality {
-    padding-left: 60px;
+    padding-left: rem(60px);
     line-height: 1.3;
   }
 }
