@@ -26,7 +26,7 @@ function Graph(props) {
   const [historicalData, setHistoricalData] = useState();
   useEffect(() => {
     setHistoricalData({
-      labels: ["1 day change", "7 day change", "30 day change"],
+      labels: ["1 hr change", "1 day change", "7 day change", "30 day change"],
       datasets: [
         {
           label: "Price",
@@ -49,7 +49,7 @@ function Graph(props) {
           pointHitRadius: 10,
           data: [
             props.coin.price,
-            props.coin["1d"].volume,
+            [props.coin["1d"].volume],
             [props.coin["7d"].volume],
             [props.coin["30d"].volume],
           ],

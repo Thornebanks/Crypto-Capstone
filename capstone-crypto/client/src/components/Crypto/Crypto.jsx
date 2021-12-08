@@ -41,7 +41,7 @@ function Crypto() {
           <h3 className="crypto__crypto">Cryptos</h3>
           <div className="crypto__tabel">
             <h3 className="crypto__prices">Price</h3>
-            <h3 className="crypto__change">24hr Change</h3>
+            <h3 className="crypto__change crypto__change--modifier">24hr Change</h3>
             <h3 className="crypto__pct">% Change</h3>
           </div>
         </div>

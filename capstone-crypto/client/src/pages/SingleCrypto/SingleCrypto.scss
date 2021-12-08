@@ -66,7 +66,7 @@
        padding-top: 15px;
        display: flex;
        flex-direction: column;
-       justify-content: space-evenly;
+    //    justify-content: space-evenly;
        line-height: 1.5;
        color: $coin;
        @include desktop{
@@ -93,14 +93,16 @@
    }
    &__value{
        display: flex;
+       @include tablet{
+    }
    }
    &__table{
        border-bottom: 1px solid $coin;
        padding: 12px 0;
        @include tablet{
            border-bottom: none;
+        }
            padding-right: 100px;
-       }
    }
    &__tablet{
        @include tablet{

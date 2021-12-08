@@ -70,7 +70,7 @@ function SingleCrypto(props) {
               <div className="crypto__h6">
                 <h6>Market Cap</h6>
               </div>
-              <div className="crypto__value">
+              <div className="crypto__value ">
                 <h6>$ {coin.market_cap}</h6>
                 <p className="crypto__p">USD</p>
               </div>
