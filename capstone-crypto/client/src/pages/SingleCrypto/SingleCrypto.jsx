@@ -3,6 +3,7 @@ import axios from "axios";
 import "./SingleCrypto.scss";
 import Chart from "../../components/Chart/Chart";
 import Header from "../../components/Header/Header";
+import NewsFeed from "../../components/NewsFeed/NewsFeed";
 
 const key = process.env.REACT_APP_API_KEY;
 
@@ -106,6 +107,7 @@ function SingleCrypto(props) {
           </div>
         </div>
       </div>
+      <NewsFeed />
     </div>
   );
 }

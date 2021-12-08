@@ -1,0 +1,37 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.NewsFeed{
+    padding: 30px 10px;
+    line-height: 1.5;
+    @include tablet{
+        padding: 40px;
+        line-height: 2;
+    }
+    @include desktop{
+        padding-left: 70px;
+    }
+
+    &__title{
+        color: $coin;
+        font-weight: bold;
+        font-size: rem(20px);
+        @include tablet{
+            font-size: rem(24px);
+        }
+    }
+    &__article{
+        color: $coin;
+        text-decoration: none;
+        :hover{
+            cursor: pointer;
+        }
+    }
+    &__para{
+        color: $coin;
+        font-size: rem(18px);
+        @include tablet{
+            font-size: rem(20px);
+        }
+    }
+}

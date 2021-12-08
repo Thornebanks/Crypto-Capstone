@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./NewsFeed.scss"
 
 const key = process.env.REACT_APP_API_KEY2;
 
@@ -33,11 +34,11 @@ function NewsFeed() {
 
   return (
     <div className="NewsFeed">
-      <h2>News About Crypto</h2>
-      {news.map((articles, i) => (
-        <div key={i}>
-          <a href={articles.url}>
-            <p>{articles.title}</p>
+      <h2 className="NewsFeed__title">News About Crypto</h2>
+      {news?.map((article, i) => (
+        <div className="NewsFeed__container" key={i}>
+          <a className="NewsFeed__article" href={article.url}>
+            <p className="NewsFeed__para">{article.title}</p>
           </a>
         </div>
       ))}
