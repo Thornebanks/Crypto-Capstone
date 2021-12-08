@@ -16,10 +16,11 @@ function Contact() {
       )
       .then((res) => {
         console.log(res);
-        sendEmail(false);
+        event.target.reset();
+        alert("Email Sent");
       })
       .catch((err) => console.log(err));
-    sendEmail(false);
+    
   }
   return (
     <div>

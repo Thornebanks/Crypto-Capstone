@@ -21,7 +21,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-const key = process.env.REACT_APP_API_KEY;
+
 function Graph(props) {
   const [historicalData, setHistoricalData] = useState();
   useEffect(() => {
@@ -48,14 +48,15 @@ function Graph(props) {
           pointRadius: 1,
           pointHitRadius: 10,
           data: [
-            props.coin.price,
-            [props.coin["1d"].volume],
-            [props.coin["7d"].volume],
-            [props.coin["30d"].volume],
+            props.coin["1h"].volume,
+            props.coin["1d"].volume,
+            props.coin["7d"].volume,
+            props.coin["30d"].volume,
           ],
         },
       ],
     });
+    // eslint-disable-next-line
   }, []);
   if (!historicalData) {
     return <h2>Loading</h2>;

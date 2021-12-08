@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./NewsFeed.scss"
 
-const key = process.env.REACT_APP_API_KEY2;
 
 function NewsFeed() {
   const [newsArticel, setNewsArticel] = useState(null);
@@ -27,8 +26,6 @@ function NewsFeed() {
         console.error(error);
       });
   }, []);
-
-  console.log(newsArticel);
 
   const news = newsArticel?.slice(0, 7);
 

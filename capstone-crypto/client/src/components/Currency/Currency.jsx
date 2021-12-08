@@ -9,7 +9,6 @@ function Currency({
   price_change,
   price_change_pct,
 }) {
-  console.log(price_change.includes("-"));
   return (
     <div className="currency">
       <div className="currency__container">

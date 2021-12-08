@@ -13,13 +13,14 @@ function SingleCrypto(props) {
   useEffect(() => {
     axios
       .get(
-        `https://api.nomics.com/v1/currencies/ticker?key=${key}&ids=${props.match.params.id}&interval=1d,7d,30d,365d&per-page=100&page=1`
+        `https://api.nomics.com/v1/currencies/ticker?key=${key}&ids=${props.match.params.id}&interval=1h,1d,7d,30d,365d&per-page=100&page=1`
       )
       .then((response) => {
         console.log(response.data);
         setCoin(response.data[0]);
       })
       .catch((error) => console.log(error));
+      // eslint-disable-next-line
   }, []);
 
   if (!coin) {
