@@ -25,7 +25,7 @@ function About() {
         </article>
         <h3 className="about__function">Functionality to add:</h3>
         <article className="about__functionality">
-          News Feed were you can read day to day news on your favorite crypto.
+          Authentication and watchlist for keeping an eye for your favorite crypto.
           Aother functionality was Exchange rate where you can conver BTC or ETH
           to USD and CAD or other way arround and Pagination.
         </article>
