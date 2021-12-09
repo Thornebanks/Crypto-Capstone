@@ -4,7 +4,7 @@ import Home from "../src/pages/Home/Home";
 import About from "./pages/About/About";
 import Footer from "../src/components/Footer/Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import SingleCrypto from "./pages/SingleCrypto/SingleCrypto";
+import SingleCrypto from "./components/SingleCrypto/SingleCrypto";
 import Contact from "./pages/Contact/Contact";
 
 function App() {
