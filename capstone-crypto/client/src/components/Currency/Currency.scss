@@ -22,7 +22,7 @@
 
     @include tablet {
       flex-direction: row;
-      justify-content: stretch;
+      padding-left: rem(30px);
     }
 
     &:hover {
@@ -38,6 +38,7 @@
     box-sizing: border-box;
     align-items: center;
     padding-right: rem(8px);
+    width: rem(200px);
   }
 
   &__img {
@@ -59,7 +60,7 @@
     @include desktop {
       align-items: center;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-evenly;
       width: 100%;
     }
   }
