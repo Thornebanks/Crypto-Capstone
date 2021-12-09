@@ -51,6 +51,7 @@ function Crypto() {
             ? obj.currency.toLowerCase() === currencySearch.toLowerCase()
             : obj
         )
+        .slice(0, 10)
         .map((obj) => (
           <Link className="crypto__link" key={obj.id} to={"/coin/" + obj.id}>
             <Currency

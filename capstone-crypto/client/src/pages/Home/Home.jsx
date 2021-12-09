@@ -1,4 +1,5 @@
 import Crypto from "../../components/Crypto/Crypto";
+import ExchangeRate from "../../components/ExchangeRates/ExchangeRates";
 import Header from "../../components/Header/Header";
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <div>
       <Header />
       <Crypto />
+      <ExchangeRate />
     </div>
   );
 }
