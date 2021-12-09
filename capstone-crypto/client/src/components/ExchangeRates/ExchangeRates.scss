@@ -1,0 +1,83 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.exchange {
+    
+    background-color: pink;
+    padding: rem(30px);
+
+  &__title {
+    text-align: center;
+    padding-top: rem(24px);
+    padding-bottom: rem(24px);
+    font-size: rem(24px);
+    @include tablet {
+      font-size: rem(30px);
+    }
+  }
+  &__row{
+      display: flex;
+      flex-direction: column;
+      padding-left: rem(16px);
+      @include tablet{
+          flex-direction: row;
+          justify-content: space-evenly;
+      }
+  }
+  &__primary{
+      display: flex;
+      justify-content: space-evenly;
+      padding-bottom: rem(12px);
+  }
+  
+  &__box{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+  }
+  &__options{
+      padding: rem(3px);
+  }
+  &__p{
+      padding-left: rem(16px);
+      font-size: rem(18px);
+      padding-bottom: rem(10px);
+      @include tablet{
+          font-size: rem(24px);
+      }
+      &--secondary{
+          margin-right: rem(-28px);
+      }
+      @include desktop{
+        padding: rem(16px);
+    }
+  }
+
+  &__input {
+    display: block;
+    background: $grey;
+    border: none;
+    padding: rem(5px);
+    @include tablet{
+        margin-right: rem(15px);
+    }
+    @include desktop{
+        padding: rem(16px);
+    }
+  }
+  &__btn {
+    width: 40%;
+    margin-left: rem(66px);
+    height: rem(46px);
+    @include tablet{
+        height: rem(40px);
+        width: 26%;
+        margin-left: rem(371px);
+    }
+    @include desktop{
+        width: 17%;
+        margin-left: 44rem;
+    }
+  }
+}
+
