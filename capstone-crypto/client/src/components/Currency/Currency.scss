@@ -87,8 +87,14 @@
   }
   &__red {
     color: $red;
+    @include tablet{
+      width: rem(80px);
+    }
   }
   &__green {
     color: $green;
+    @include tablet{
+      width: rem(80px);
+    }
   }
 }
