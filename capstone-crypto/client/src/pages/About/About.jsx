@@ -16,7 +16,7 @@ function About() {
           goods and services. Many companies have issued their own currencies,
           often called tokens, and these can be traded specifically for the good
           or service that the company provides. Think of them as you would
-          arcade tokens or casino chips. You’ll need to exchange real currency
+          arcade tokens or casino chips. You'll need to exchange real currency
           for the cryptocurrency to access the good or service. Cryptocurrencies
           work using a technology called blockchain. Blockchain is a
           decentralized technology spread across many computers that manages and
@@ -25,9 +25,7 @@ function About() {
         </article>
         <h3 className="about__function">Functionality to add:</h3>
         <article className="about__functionality">
-          Authentication and watchlist for keeping an eye for your favorite crypto.
-          Aother functionality was Exchange rate where you can conver BTC or ETH
-          to USD and CAD or other way arround and Pagination.
+          Authentication, so you can have watchlist for keeping an eye for your favorite crypto and Pagination.
         </article>
       </div>
     </div>
